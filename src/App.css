@@ -1,0 +1,462 @@
+/***    General     ***/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.5;
+  font-size: 20px;
+}
+
+.m-5-auto {
+  margin: 5rem auto;
+}
+
+.primary-button {
+  margin-top: 2rem;
+  margin-right: 1rem;
+  padding: 0.6rem;
+  width: 10rem;
+  background: #0055ff;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  transition: all 0.5s;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+/***    Landing Page     ***/
+.main-title,
+.main-para {
+  color: #000000;
+}
+
+.main-title {
+  margin: 0.5rem;
+  padding-top: 10rem;
+  font-size: 5rem;
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+}
+
+.main-para {
+  font-size: 2.5rem;
+  text-transform: capitalize;
+}
+.text-small {
+  font-size: 0.7rem;
+  color: #808080;
+  font-style: italic;
+  text-align: justify;
+}
+
+#reg_btn span {
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+#reg_btn span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+#reg_btn:hover span {
+  padding-right: 25px;
+}
+
+#reg_btn:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+/*** Basic ELEMENT CSS ***/
+
+h6 {
+  margin: 0.5rem;
+  text-align: justify;
+}
+h5 {
+  font-weight: 400;
+}
+h4 {
+  font-weight: 400;
+  margin: 1rem;
+}
+h2 {
+  font-weight: 300;
+}
+h1 {
+  font-weight: 1000;
+  margin: 1rem;
+}
+p {
+  font-size: 1.1rem;
+}
+
+/*** Form ***/
+form {
+  display: inline-block;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  width: 100%;
+  border-radius: 0.25rem;
+  padding: 2.5rem 0.625rem;
+  margin: 2rem 0 1rem 0;
+}
+@media (min-width: 500px) {
+  form {
+    padding: 2.5rem 1.5rem 2.5rem 1rem;
+  }
+}
+/***    Login Page     ***/
+label {
+  margin-left: 0.5rem;
+  font-size: 1rem;
+  margin: 0;
+  align-items: center;
+}
+
+.right-label {
+  float: right;
+  cursor: pointer;
+}
+.left {
+  float: left;
+  cursor: pointer;
+}
+
+input {
+  margin: 0.5rem;
+  padding: 0.3rem;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+}
+
+#sub_btn {
+  display: block;
+  width: 100%;
+  padding: 0.3rem;
+  border: none;
+  background: #0055ff;
+  color: #fff;
+  border-radius: 3px;
+}
+
+#sub_btn:hover {
+  background: #1a8cff;
+  transition: all 0.5s;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/***    Register Page     ***/
+#checkbox {
+  width: 1rem;
+}
+
+form span {
+  font-size: 0.8rem;
+}
+
+#reset_pass_lbl {
+  float: left;
+}
+
+/***  REGISTER/LOGIN/FORM ***/
+.container {
+  margin: 0.525rem auto 0 auto;
+}
+
+.container-field {
+  margin: 0.525rem auto 0 auto;
+}
+.container-form2 {
+  margin: 0.525rem auto 0 auto;
+}
+.grid-container {
+  margin: 0.2rem 0.2rem 0.2rem 0;
+}
+
+@media (min-width: 500px) {
+  .container {
+    max-width: 350px;
+  }
+}
+
+/*** FORM FOR REGISTER ***/
+.form-reg {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-areas:
+    "header header header"
+    "content content content"
+    "last last last";
+  background: #ffffff;
+  border: 1px solid #ddd;
+  width: 100vw;
+  /* column-gap: 5px; */
+  border-radius: 0.25rem;
+  margin: 0.5rem 0 0 0;
+}
+.grid-item-1 {
+  grid-area: header;
+}
+@media (max-width: 700px) {
+  .form-reg {
+    display: block;
+    margin: 0 0.5rem 1.5rem 0;
+    padding-left: 0.1rem;
+  }
+}
+/*** FORM CONTAINER ***/
+
+@media (min-width: 700px) {
+  .container {
+    max-width: 350px;
+  }
+  .container-form2 {
+    max-width: 700px;
+  }
+  .container-field {
+    max-width: 900px;
+  }
+}
+
+/*** Form  REGISTER ***/
+.register-container {
+  margin: 0;
+}
+
+@media (min-width: 500px) {
+  .register-container {
+    max-width: 550px;
+  }
+}
+@media (min-width: 768px) {
+  .register-container {
+    max-width: 720px;
+  }
+}
+
+/*** GROUP CONTAINER ***/
+.description {
+  font-style: italic;
+  font-weight: 200;
+}
+
+.form-group {
+  margin: 0.2rem 0.5rem 0.5rem;
+  padding: 0.25rem;
+}
+.form-input {
+  padding: 0.25rem;
+  text-align: center;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  margin-left: 0;
+  height: 2.5rem;
+  padding: 0.5rem 0.7rem;
+  border-radius: 0.25rem;
+  border: 1px solid #808080;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.form-control:focus {
+  border-color: #a6a6a6;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+.form-control1 {
+  display: block;
+  height: 2.5rem;
+  padding: 0.5rem 0.7rem;
+  border-radius: 0.25rem;
+  border: 1px solid #808080;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.form-control1:focus {
+  border-color: #a6a6a6;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+.input-control {
+  height: 2.5rem;
+  margin: 1rem;
+  border: 1px solid black;
+  background-color: #d9d9d9;
+}
+
+.input-control:focus {
+  border-color: #a6a6a6;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.container-vaccine {
+  margin: 0.5rem 0.7rem 0.5rem 0.7rem;
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 0.5rem 1rem 0.4rem 0.2rem;
+}
+.input-radio,
+.input-checkbox {
+  display: inline-block;
+  margin: 1rem;
+  min-height: 1.25rem;
+  min-width: 1.25rem;
+}
+.input-row {
+  display: block;
+  /* flex-direction: column; */
+  margin-top: 1rem;
+  padding: 5px;
+  min-height: 1.25rem;
+  min-width: 1.25rem;
+}
+
+/*** Grid for symptoms UpdateForm***/
+.checkbox-wrapper {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+
+@media (max-width: 700px) {
+  .checkbox-wrapper {
+    display: block;
+  }
+}
+.input-grid {
+  min-height: 1.25rem;
+  min-width: 1.25rem;
+}
+.underline-text {
+  width: 55%;
+  display: inline-block;
+  border: none;
+  border-bottom: 1px solid black;
+}
+/***Pagination ***/
+.pagination-button {
+  display: inline;
+  margin: 0.2rem;
+  border-radius: 5px;
+  background-color: #0055ff;
+  color: #ffffff;
+  float: right;
+}
+.grid-pagination {
+  margin: 0.3rem;
+  grid-area: last;
+}
+/***    Home Page     ***/
+.home-page-title {
+  color: #222;
+}
+
+/*** Error Page ***/
+.error-page {
+  display: flex;
+  justify-content: center;
+}
+.error-container {
+  text-align: center;
+  text-transform: capitalize;
+}
+
+/*** HomePage ***/
+
+.wrapper-field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+}
+.a-field img {
+  width: 70%;
+  margin: 5rem 0 1rem 1rem;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.home-button {
+  margin-left: 3.5rem;
+  padding: 0.6rem;
+  width: 10rem;
+  background: #0055ff;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  transition: all 0.5s;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+.secondary-button {
+  margin-left: 3.5rem;
+  padding: 0.6rem;
+  width: 15rem;
+  height: 5rem;
+  background: #ff3333;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  transition: all 0.5s;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+.third-button {
+  margin-left: 3.5rem;
+  padding: 0.6rem;
+  background: #1a8cff;
+  border: none;
+  color: #ffff;
+  font-size: 1.2rem;
+  transition: all 0.5s;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+/*** NAVBAR ***/
+.navbar {
+  width: 100%;
+  height: 70px;
+  background-color: dodgerblue;
+  display: flex;
+  align-items: center;
+}
+
+.navbar .loggedInContainer {
+  flex: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar button {
+  width: 100px;
+  height: 40px;
+  cursor: pointer;
+  margin-right: 10px;
+  border: 1px solid dodgerblue;
+  background-color: dodgerblue;
+}
+
+.navabr h4 {
+  margin-right: 10px;
+  color: white;
+}
