@@ -60,7 +60,7 @@ function HomePage() {
           <img src={image} alt="img" />
           <button className="home-button">Download Now</button>
         </a>
-        {form.date != todayDate ? (
+        {form.date !== todayDate ? (
           <Link to={`/updateform/${id}`}>
             <button className="secondary-button">
               Please Update Your Form
