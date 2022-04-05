@@ -62,8 +62,8 @@ function UpdateForm() {
   const inputForm = (e) => {
     e.preventDefault();
 
-    axiosInstance
-      .post("updateform", {
+    axios
+      .post("https://project-login-triageform.herokuapp.com/updateform", {
         purpose: purpose,
         symptoms: symptoms,
         fever: fever,
