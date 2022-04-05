@@ -15,9 +15,7 @@ function HomePage() {
 
   useEffect(() => {
     axios
-      .get(
-        `https://project-login-triageform.herokuapp.com/updateForm/updateId/${id}`
-      )
+      .get(`https://triage-system-form.herokuapp.com/updateForm/updateId/${id}`)
       .then((response) => {
         if (response.data == null) {
           navigate(`/updateform/${id}`);
@@ -26,9 +24,7 @@ function HomePage() {
         }
       });
     axios
-      .get(
-        `https://project-login-triageform.herokuapp.com/registerform/byId/${id}`
-      )
+      .get(`https://triage-system-form.herokuapp.com/registerform/byId/${id}`)
       .then((response) => {
         setUsers(response.data);
       });

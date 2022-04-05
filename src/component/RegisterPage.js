@@ -17,7 +17,7 @@ function RegisterPage() {
     const data = { username: username, email: email, password: password };
 
     axios
-      .post("https://project-login-triageform.herokuapp.com/registerform", data)
+      .post("https://triage-system-form.herokuapp.com/registerform", data)
       .then(() => {
         navigate("/login");
       });

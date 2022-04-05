@@ -60,7 +60,7 @@ function UpdateForm() {
     e.preventDefault();
 
     axios
-      .post("https://project-login-triageform.herokuapp.com/updateform", {
+      .post("https://triage-system-form.herokuapp.com/updateform", {
         purpose: purpose,
         symptoms: symptoms,
         fever: fever,
@@ -106,9 +106,7 @@ function UpdateForm() {
       });
 
     axios
-      .get(
-        `https://project-login-triageform.herokuapp.com/updateform/updateId/${id}`
-      )
+      .get(`https://triage-system-form.herokuapp.com/updateform/updateId/${id}`)
       .then((response) => {
         setUpdateForm(response.data);
       });

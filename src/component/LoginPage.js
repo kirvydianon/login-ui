@@ -26,7 +26,7 @@ export default function SignInPage() {
 
     axios
       .post(
-        "https://project-login-triageform.herokuapp.com/registerform/login/",
+        "https://triage-system-form.herokuapp.com/registerform/login/",
         data
       )
       .then((response) => {
