@@ -20,9 +20,6 @@ export default function SignInPage() {
 
   const navigate = useNavigate();
 
-  const axiosInstance = axios.create({
-    baseURL: process.env.REACT_APP_API_URL,
-  });
   const login = (e) => {
     e.preventDefault();
     const data = { username: username, password: password };

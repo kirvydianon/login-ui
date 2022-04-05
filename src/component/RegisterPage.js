@@ -12,10 +12,6 @@ function RegisterPage() {
 
   const navigate = useNavigate();
 
-  const axiosInstance = axios.create({
-    baseURL: process.env.REACT_APP_API_URL,
-  });
-
   const onSubmit = (e) => {
     e.preventDefault();
     const data = { username: username, email: email, password: password };

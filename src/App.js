@@ -14,9 +14,7 @@ function App() {
   const todayDate = new Date().toJSON().split("T")[0];
 
   const { auth, setAuth, form, updateForm } = useGlobalContext();
-  const axiosInstance = axios.create({
-    baseURL: process.env.REACT_APP_API_URL,
-  });
+
   useEffect(() => {
     axios
       .get(

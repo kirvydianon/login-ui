@@ -36,9 +36,6 @@ function FormPage() {
     designation,
   } = useGlobalContext();
 
-  const axiosInstance = axios.create({
-    baseURL: process.env.REACT_APP_API_URL,
-  });
   const inputForm = (e) => {
     e.preventDefault();
 

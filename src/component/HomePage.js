@@ -10,9 +10,7 @@ function HomePage() {
   const [image, setImage] = useState("");
 
   const todayDate = new Date().toJSON().split("T")[0];
-  const axiosInstance = axios.create({
-    baseURL: process.env.REACT_APP_API_URL,
-  });
+
   const { auth, setAuth, users, setUsers, form, setForm } = useGlobalContext();
 
   useEffect(() => {
