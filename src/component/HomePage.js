@@ -17,7 +17,9 @@ function HomePage() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/updateForm/updateId/${id}`)
+      .get(
+        `https://project-login-triageform.herokuapp.com/updateForm/updateId/${id}`
+      )
       .then((response) => {
         if (response.data == null) {
           navigate(`/updateform/${id}`);
@@ -25,9 +27,13 @@ function HomePage() {
           setForm(response.data);
         }
       });
-    axiosInstance.get(`registerform/byId/${id}`).then((response) => {
-      setUsers(response.data);
-    });
+    axios
+      .get(
+        `https://project-login-triageform.herokuapp.com/registerform/byId/${id}`
+      )
+      .then((response) => {
+        setUsers(response.data);
+      });
 
     QRCode.toDataURL(id).then((data) => {
       setImage(data);

@@ -19,9 +19,12 @@ function App() {
   });
   useEffect(() => {
     axios
-      .get("http://localhost:5000/registerform/auth/", {
-        headers: { accessToken: localStorage.getItem("accessToken") },
-      })
+      .get(
+        "https://project-login-triageform.herokuapp.com/registerform/auth/",
+        {
+          headers: { accessToken: localStorage.getItem("accessToken") },
+        }
+      )
       .then((response) => {
         if (response.data.error) {
           setAuth({ ...auth, status: false });
