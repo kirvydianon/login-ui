@@ -109,9 +109,7 @@ function UpdateForm() {
       });
 
     axios
-      .get(
-        `https://project-login-triageform.herokuapp.com/updateform/updateId/${id}`
-      )
+      .get(`http://localhost:5000/updateform/updateId/${id}`)
       .then((response) => {
         setUpdateForm(response.data);
       });

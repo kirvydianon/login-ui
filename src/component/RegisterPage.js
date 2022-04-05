@@ -20,11 +20,9 @@ function RegisterPage() {
     e.preventDefault();
     const data = { username: username, email: email, password: password };
 
-    axios
-      .post("https://project-login-triageform.herokuapp.com/registerform", data)
-      .then(() => {
-        navigate("/login");
-      });
+    axios.post("http://localhost:5000/registerform", data).then(() => {
+      navigate("/login");
+    });
   };
 
   return (

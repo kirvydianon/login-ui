@@ -17,9 +17,7 @@ function HomePage() {
 
   useEffect(() => {
     axios
-      .get(
-        `https://project-login-triageform.herokuapp.com/updateForm/updateId/${id}`
-      )
+      .get(`http://localhost:5000/updateForm/updateId/${id}`)
       .then((response) => {
         if (response.data == null) {
           navigate(`/updateform/${id}`);

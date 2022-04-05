@@ -28,10 +28,7 @@ export default function SignInPage() {
     const data = { username: username, password: password };
 
     axios
-      .post(
-        "https://project-login-triageform.herokuapp.com/registerform/login/",
-        data
-      )
+      .post("http://localhost:5000/registerform/login/", data)
       .then((response) => {
         if (response.data.error) {
           alert(response.data.error);

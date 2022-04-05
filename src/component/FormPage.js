@@ -43,7 +43,7 @@ function FormPage() {
     e.preventDefault();
 
     axios
-      .post("https://project-login-triageform.herokuapp.com/registerform", {
+      .post("http://localhost:5000/registerform", {
         username: username,
         email: email,
         password: password,
