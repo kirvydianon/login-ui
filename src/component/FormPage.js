@@ -40,7 +40,7 @@ function FormPage() {
     e.preventDefault();
 
     axios
-      .post("https://triage-system-uc.herokuapp.com/registerform", {
+      .post("https://triage-system-uc.herokuapp.com/registerform/", {
         username: username,
         email: email,
         password: password,
