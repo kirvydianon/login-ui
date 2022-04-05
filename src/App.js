@@ -2,7 +2,6 @@ import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import { useEffect } from "react";
 import LandingPage from "./component/LandingPage";
 import LoginPage from "./component/LoginPage";
-import RegisterPage from "./component/RegisterPage";
 import FormPage from "./component/FormPage";
 import Error from "./component/Error";
 import UpdateForm from "./component/UpdateForm";
@@ -17,7 +16,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("https://triage-system-form.herokuapp.com/registerform/auth/", {
+      .get("https://triage-system-uc.herokuapp.com/registerform/auth/", {
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
       .then((response) => {

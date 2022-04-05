@@ -25,10 +25,7 @@ export default function SignInPage() {
     const data = { username: username, password: password };
 
     axios
-      .post(
-        "https://triage-system-form.herokuapp.com/registerform/login/",
-        data
-      )
+      .post("https://triage-system-uc.herokuapp.com/registerform/login/", data)
       .then((response) => {
         if (response.data.error) {
           alert(response.data.error);

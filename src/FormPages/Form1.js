@@ -74,7 +74,7 @@ function Form1({ id, pagination, setPagination, inputForm }) {
           </div>
           <div className="form-group">
             <input
-              type="text"
+              type="password"
               placeholder="Password"
               className="form-control"
               value={password}
