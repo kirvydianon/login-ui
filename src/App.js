@@ -42,12 +42,8 @@ function App() {
         {auth.status && (
           <>
             <Route path="/homepage/:id" element={<HomePage />} />
+            <Route path="/updateform/:id" element={<UpdateForm />} />
           </>
-        )}
-        {form.date == todayDate ? (
-          <Route path="/homepage/:id" element={<HomePage />} />
-        ) : (
-          <Route path="/updateform/:id" element={<UpdateForm />} />
         )}
         <Route path="/form/" element={<FormPage />} />
         <Route exact path="/" element={<LandingPage />} />
