@@ -27,3 +27,4 @@ jobs:
           server: ftp.ucnmtriage.com
           username: kaidu@test.ucnmtriage.com
           password: ${{ secrets.ftp_password }}
+          server-dir: /public_html/
