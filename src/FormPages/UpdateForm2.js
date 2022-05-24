@@ -28,7 +28,6 @@ function UpdateForm2({ id, isUpdated, setIsUpdated, inputForm }) {
     <div className="container-field">
       <form onSubmit={inputForm}>
         <header className="header">
-          <h3 className="text-left">Hello! {user.firstname}</h3>
           <h4 className="text-center">
             University of Cebu Daily Health Symptoms Questionnaire
           </h4>
@@ -143,7 +142,7 @@ function UpdateForm2({ id, isUpdated, setIsUpdated, inputForm }) {
               />
               No
               <label>
-                If yes, where?
+                . If yes, where?
                 <input
                   type="text"
                   className="underline-text"
@@ -156,7 +155,7 @@ function UpdateForm2({ id, isUpdated, setIsUpdated, inputForm }) {
             </label>
           </div>
         </div>
-        <div className="form-input">
+        {/* <div className="form-input">
           <h6>
             Please attach copy of certificate of Completion of Quarantine ( for
             returning students, OFW, Seafarers or patient with influenza like
@@ -176,7 +175,7 @@ function UpdateForm2({ id, isUpdated, setIsUpdated, inputForm }) {
             Import File:
             <input type="file" className="input-control" />
           </label>
-        </div>
+        </div> */}
         <div className="form-group">
           <label className="text-small">
             <input
@@ -204,7 +203,7 @@ function UpdateForm2({ id, isUpdated, setIsUpdated, inputForm }) {
             <button id="submit" type="submit" className="primary-button">
               Submit
             </button>
-            <Link to={`/homepage/${id}`}>
+            <Link to={`/homepage/`}>
               <button id="submit" type="submit" className="primary-button">
                 Cancel
               </button>

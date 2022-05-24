@@ -4,6 +4,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { useGlobalContext } from "../Auth/ContextProvider";
 import Form1 from "../FormPages/Form1";
 import Form2 from "../FormPages/Form2";
+import api from "../Api/Api";
 
 function FormPage() {
   const navigate = useNavigate();
@@ -36,11 +37,11 @@ function FormPage() {
     designation,
   } = useGlobalContext();
 
-  const inputForm = (e) => {
+  const inputForm = async (e) => {
     e.preventDefault();
 
-    axios
-      .post("https://triage-system-uc.herokuapp.com/registerform/", {
+    api
+      .post("registerform/", {
         username: username,
         email: email,
         password: password,
@@ -60,7 +61,6 @@ function FormPage() {
         year: year,
         grade: grade,
         designation: designation,
-        inviActive: true,
       })
       .then(() => {
         navigate("/login");

@@ -3,7 +3,6 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { useGlobalContext } from "../Auth/ContextProvider";
 
 function UpdateForm1({ id, isUpdated, setIsUpdated, inputForm }) {
-  const [user, setUser] = useState("");
   const {
     purpose,
     setPurpose,
@@ -31,11 +30,29 @@ function UpdateForm1({ id, isUpdated, setIsUpdated, inputForm }) {
     auth,
   } = useGlobalContext();
 
+  const yesButton = () => {
+    if (symptoms === "no") {
+      setFever("");
+      setCough("");
+      setHeadache("");
+      setDiarrhea("");
+      setBodyPain("");
+      setLostSmell("");
+      setSkin("");
+      setShortness("");
+      setColds("");
+      setSore("");
+    }
+  };
+
+  useEffect(() => {
+    yesButton();
+  }, [symptoms]);
+
   return (
     <div className="container-field">
       <form onSubmit={inputForm}>
         <header className="header">
-          <h3 className="text-left">Hello! {auth.username}</h3>
           <h4 className="text-center">
             University of Cebu Daily Health Symptoms Questionnaire
           </h4>
@@ -84,7 +101,7 @@ function UpdateForm1({ id, isUpdated, setIsUpdated, inputForm }) {
             </label>
           </div>
           <label>
-            <h6>If yes, please check any of he following symptoms:</h6>
+            <h6>If yes, please check any of the following symptoms:</h6>
           </label>
           <div className="checkbox-wrapper">
             <div>

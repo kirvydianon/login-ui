@@ -4,6 +4,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { useGlobalContext } from "../Auth/ContextProvider";
 import UpdateForm1 from "../FormPages/UpdateForm1";
 import UpdateForm2 from "../FormPages/UpdateForm2";
+import api from "../Api/Api";
 
 function UpdateForm() {
   let { id } = useParams();
@@ -54,62 +55,71 @@ function UpdateForm() {
     setColds,
     sore,
     setSore,
+    loading,
+    setLoading,
   } = useGlobalContext();
 
-  const inputForm = (e) => {
+  const inputForm = async (e) => {
+    setLoading(true);
     e.preventDefault();
+    try {
+      api
+        .post("updateform", {
+          username: users.username,
+          firstname: users.firstname,
+          lastname: users.lastname,
+          middlename: users.middlename,
+          purpose: purpose,
+          symptoms: symptoms,
+          fever: fever,
+          cough: cough,
+          headache: headache,
+          diarrhea: diarrhea,
+          bodyPain: bodyPain,
+          lostSmell: lostSmell,
+          skin: skin,
+          shortness: shortness,
+          colds: colds,
+          sore: sore,
+          hotspots: hotspots,
+          together: together,
+          expose: expose,
+          travel: travel,
+          where: where,
+          RegisterFormId: id,
+          date: date,
+          temperature: 0,
+          timesIn: 0,
+        })
+        .then((response) => {
+          navigate(`/homepage`);
+          setPurpose("");
+          setSymptoms("");
+          setFever("");
+          setCough("");
+          setHeadache("");
+          setDiarrhea("");
+          setBodyPain("");
+          setLostSmell("");
+          setSkin("");
+          setShortness("");
+          setColds("");
+          setSore("");
+          setHotspots("");
+          setTogether("");
+          setExpose("");
+          setTravel("");
+          setWhere("");
+          setIsUpdated(true);
+        });
 
-    axios
-      .post("https://triage-system-uc.herokuapp.com/updateform", {
-        purpose: purpose,
-        symptoms: symptoms,
-        fever: fever,
-        cough: cough,
-        headache: headache,
-        diarrhea: diarrhea,
-        bodyPain: bodyPain,
-        lostSmell: lostSmell,
-        skin: skin,
-        shortness: shortness,
-        colds: colds,
-        sore: sore,
-        hotspots: hotspots,
-        together: together,
-        expose: expose,
-        travel: travel,
-        where: where,
-        RegisterFormId: id,
-        updateActive: true,
-        date: date,
-        temperature: 0,
-      })
-      .then((response) => {
-        navigate(`/homepage/${id}`);
-        setPurpose("");
-        setSymptoms("");
-        setFever("");
-        setCough("");
-        setHeadache("");
-        setDiarrhea("");
-        setBodyPain("");
-        setLostSmell("");
-        setSkin("");
-        setShortness("");
-        setColds("");
-        setSore("");
-        setHotspots("");
-        setTogether("");
-        setExpose("");
-        setTravel("");
-        setWhere("");
-        setIsUpdated(true);
-      });
-
-    axios
-      .get(`https://triage-system-uc.herokuapp.com/updateform/updateId/${id}`)
-      .then((response) => {
+      api.get(`updateform/updateId/${id}`).then((response) => {
         setUpdateForm(response.data);
       });
+      setLoading(false);
+    } catch (error) {
+      alert("No Data Available");
+    }
   };
   return (
     <div>

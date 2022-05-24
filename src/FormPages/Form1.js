@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useGlobalContext } from "../Auth/ContextProvider";
+import NumberFormat from "react-number-format";
+
+import * as ReactBootStrap from "react-bootstrap";
 
 function Form1({ id, pagination, setPagination, inputForm }) {
   const navigate = useNavigate();
@@ -64,7 +67,7 @@ function Form1({ id, pagination, setPagination, inputForm }) {
           </div>
           <div className="form-group">
             <input
-              type="text"
+              type="email"
               placeholder="Email"
               className="form-control"
               value={email}
@@ -86,7 +89,7 @@ function Form1({ id, pagination, setPagination, inputForm }) {
             <input
               type="text"
               placeholder="Firstname"
-              className="form-control"
+              className="form-control text-capitalize"
               value={firstname}
               onChange={(e) => setFirstname(e.target.value)}
               required
@@ -98,17 +101,17 @@ function Form1({ id, pagination, setPagination, inputForm }) {
               placeholder="Lastname"
               value={lastname}
               onChange={(e) => setLastname(e.target.value)}
-              className="form-control"
+              className="form-control text-capitalize"
               required
             />
           </div>
           <div className="form-group">
             <input
               type="text"
-              placeholder="Middle Initial"
+              placeholder="Middle Initial "
               value={middlename}
               onChange={(e) => setMiddlename(e.target.value)}
-              className="form-control"
+              className="form-control text-capitalize"
               required
             />
           </div>
@@ -118,7 +121,7 @@ function Form1({ id, pagination, setPagination, inputForm }) {
               placeholder="Nationality"
               value={nationality}
               onChange={(e) => setNationality(e.target.value)}
-              className="form-control"
+              className="form-control text-capitalize"
               required
             />
           </div>
@@ -136,12 +139,13 @@ function Form1({ id, pagination, setPagination, inputForm }) {
             />
           </div>
           <div className="form-group">
-            <input
-              type="text"
-              placeholder="Contact Number"
+            <NumberFormat
+              placeholder="Contact"
+              className="form-control"
+              format="09 ### ### ###"
+              mask="_"
               value={contact}
               onChange={(e) => setContact(e.target.value)}
-              className="form-control"
               required
             />
           </div>

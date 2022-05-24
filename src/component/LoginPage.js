@@ -2,6 +2,8 @@ import axios from "axios";
 import React, { useState, useContext, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useGlobalContext } from "../Auth/ContextProvider";
+import Loading from "../FormPages/Loading";
+import api from "../Api/Api";
 
 export default function SignInPage() {
   const [username, setUsername] = useState("");
@@ -16,31 +18,49 @@ export default function SignInPage() {
     setForm,
     updateForm,
     setUpdateForm,
+    loading,
+    setLoading,
   } = useGlobalContext();
 
   const navigate = useNavigate();
 
-  const login = (e) => {
+  const login = async (e) => {
     e.preventDefault();
-    const data = { username: username, password: password };
+    setLoading(true);
 
-    axios
-      .post("https://triage-system-uc.herokuapp.com/registerform/login/", data)
-      .then((response) => {
+    try {
+      const data = { username: username, password: password };
+
+      api.post("registerform/login/", data).then((response) => {
         if (response.data.error) {
           alert(response.data.error);
         } else {
           localStorage.setItem("accessToken", response.data.token);
-          setAuth({
-            username: response.data.username,
-            id: response.data.id,
-            status: true,
+          setAuth((prev) => {
+            return {
+              ...prev,
+              username: response.data.username,
+              id: response.data.id,
+              status: true,
+            };
           });
 
-          navigate(`/homepage/${response.data.id}`);
+          navigate(`/homepage/`);
         }
       });
+      setLoading(false);
+    } catch (error) {
+      alert("No Data Available");
+    }
   };
+
+  if (loading) {
+    return (
+      <main>
+        <Loading />
+      </main>
+    );
+  }
 
   return (
     <div className="container text-center">

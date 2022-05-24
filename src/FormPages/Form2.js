@@ -147,6 +147,7 @@ function Form2({ id, pagination, setPagination, inputForm }) {
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
+                <option value="5">5</option>
               </select>
             </label>
           </div>
@@ -253,12 +254,12 @@ function Form2({ id, pagination, setPagination, inputForm }) {
             Prev
           </button>
 
-          <div className="form-group">
-            <button id="submit" type="submit" className="primary-button">
+          <div className="form-group text-center">
+            <button id="submit" type="submit" className="primary-button ">
               Submit
             </button>
             <Link to="/">
-              <button id="submit" type="submit" className="primary-button">
+              <button id="submit" type="submit" className="primary-button ">
                 Cancel
               </button>
             </Link>

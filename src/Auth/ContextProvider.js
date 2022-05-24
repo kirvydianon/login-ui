@@ -6,14 +6,10 @@ const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
   const [users, setUsers] = useState([]);
+  const [data, setData] = useState([]);
 
-  const [auth, setAuth] = useState({
-    id: 0,
-    username: "",
-    status: false,
-    // inviActive: false,
-    // updateActive: false,
-  });
+  const [auth, setAuth] = useState({ id: 0, username: "", status: false });
+  const [loading, setLoading] = useState(true);
 
   const [isUpdated, setIsUpdated] = useState(true);
   const [pagination, setPagination] = useState(true);
@@ -29,7 +25,7 @@ const AppProvider = ({ children }) => {
   const [lastname, setLastname] = useState("");
   const [middlename, setMiddlename] = useState("");
   const [nationality, setNationality] = useState("");
-  const [age, setAge] = useState(0);
+  const [age, setAge] = useState("");
   const [contact, setContact] = useState("");
   const [gender, setGender] = useState("");
   const [types, setTypes] = useState("");
@@ -77,11 +73,24 @@ const AppProvider = ({ children }) => {
   const [colds, setColds] = useState("");
   const [sore, setSore] = useState("");
 
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const openSidebar = () => {
+    setIsSidebarOpen(true);
+  };
+  const closeSidebar = () => {
+    setIsSidebarOpen(false);
+  };
+
   return (
     <AppContext.Provider
       value={{
+        loading,
+        setLoading,
         users,
         setUsers,
+        data,
+        setData,
         auth,
         setAuth,
         isUpdated,
@@ -168,6 +177,9 @@ const AppProvider = ({ children }) => {
         setColds,
         sore,
         setSore,
+        isSidebarOpen,
+        openSidebar,
+        closeSidebar,
       }}
     >
       {children}
